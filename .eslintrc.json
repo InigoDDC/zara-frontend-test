@@ -7,7 +7,7 @@
       "jsx": true,
       "modules": true,
       "experimentalObjectRestSpread": true
-  }
+    }
   },
   "extends": [
     "eslint:recommended",
