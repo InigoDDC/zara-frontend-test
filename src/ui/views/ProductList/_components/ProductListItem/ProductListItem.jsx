@@ -13,9 +13,11 @@ export const ProductListItem = ({ product, onClick }) => {
         <p>
           <b>Modelo:</b> {product.model}
         </p>
-        <p>
-          <b>Precio:</b> {product.price}€
-        </p>
+        {product.price && (
+          <p>
+            <b>Precio:</b> {product.price}€
+          </p>
+        )}
       </div>
     </StyledProductListItem>
   )

@@ -1,1 +1,3 @@
-export const apiRouteProvider = {}
+export const apiRouteProvider = {
+  productList: '/api/product'
+}
