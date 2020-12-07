@@ -1,4 +1,4 @@
-import { rem } from "polished";
+import { rem } from 'polished'
 
 export const sizes = {
   /** 8px */
@@ -12,5 +12,5 @@ export const sizes = {
   /** 48px */
   xLarge: rem(48),
   /** scale with base 4 */
-  scale: (factor) => rem(4 * factor)
+  scale: factor => rem(4 * factor)
 }

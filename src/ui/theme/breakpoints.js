@@ -10,5 +10,5 @@ export const breakpoints = {
   /** 1440px */
   desktopXL: 1440,
   /** 1680px */
-  desktopH: 1680,
+  desktopH: 1680
 }
