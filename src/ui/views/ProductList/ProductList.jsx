@@ -1,5 +1,9 @@
 import { productServices } from 'core/services/product'
 import * as React from 'react'
+import styled from 'styled-components'
+import { Container } from 'ui/components/Container'
+import { sizes } from 'ui/theme'
+import { ProductListItem } from './_components/ProductListItem'
 
 export const ProductList = () => {
   const [productList, setProductList] = React.useState([])
@@ -14,13 +18,25 @@ export const ProductList = () => {
   })
 
   return (
-    <div>
-      {productList.map(product => (
-        <div key={product.id}>
-          <img src={product.image} />
-          <p>{product.brand}</p>
-        </div>
-      ))}
-    </div>
+    <Container>
+      <StyledProductList>
+        {productList.map(product => (
+          <ProductListItem key={product.id} product={product} onClick={() => ''} />
+        ))}
+      </StyledProductList>
+    </Container>
   )
 }
+
+const StyledProductList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-top: -${sizes.medium};
+  margin-left: -${sizes.medium};
+
+  & > * {
+    margin-top: ${sizes.medium};
+    margin-left: ${sizes.medium};
+  }
+`

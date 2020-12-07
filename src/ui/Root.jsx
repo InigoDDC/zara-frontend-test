@@ -1,5 +1,6 @@
-import * as React from 'react';
+import * as React from 'react'
+import { ProductList } from './views/ProductList'
 
 export const Root = () => {
-  return <p>Holi</p>
+  return <ProductList />
 }

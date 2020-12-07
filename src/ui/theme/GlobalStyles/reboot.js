@@ -32,13 +32,18 @@ export const reboot = css`
   }
 
   body {
-    /* ${font.base}; */
-    /* color: ${colors.gray1}; */
+    ${font.base};
+    color: ${colors.text};
+    background-color: ${colors.lighterBlue};
     text-align: left; /* 3 */
     height: 100%; /* 7 */
 
     #root {
       height: 100%; /* 7 */
+    }
+
+    b {
+      font-weight: bold;
     }
   }
 

@@ -1,4 +1,5 @@
 export * from './font'
 export { GlobalStyles } from './GlobalStyles'
-export { sizes } from './size'
+export { breakpoints } from './breakpoints'
 export { colors } from './colors'
+export { sizes } from './size'
