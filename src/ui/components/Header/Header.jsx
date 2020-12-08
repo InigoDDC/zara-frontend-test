@@ -4,7 +4,8 @@ import { useLocation } from 'wouter'
 import logo from 'ui/images/logo.png'
 import { sizes } from 'ui/theme'
 import { Container } from '../Container'
-import { BreadCrumbs } from './Breadcrumbs'
+import { BreadCrumbs } from './_components/Breadcrumbs'
+import { CartIcon } from './_components/CartIcon'
 
 export const Header = () => {
   const [, setLocation] = useLocation()
@@ -13,7 +14,7 @@ export const Header = () => {
     <StyledHeader>
       <Logo src={logo} onClick={() => setLocation('/')} />
       <BreadCrumbs />
-      {/* <CartIcon /> */}
+      <CartIcon />
     </StyledHeader>
   )
 }

@@ -10,11 +10,15 @@ import {
 } from './ProductDetail.styles'
 import { OptionsSelect } from './_components/OptionsSelect'
 import { ListItem } from './_components/ListItem'
+import { CartContext } from 'ui/components/CartContextProvider'
+import { cartServices } from 'core/services/cart'
 
 export const ProductDetail = ({ productId }) => {
   const [productDetail, setProductDetail] = React.useState()
   const [storageValue, setStorageValue] = React.useState()
   const [colorValue, setColorValue] = React.useState()
+
+  const cart = React.useContext(CartContext)
 
   React.useEffect(() => {
     const loadProductDetail = async () => {
@@ -32,16 +36,17 @@ export const ProductDetail = ({ productId }) => {
   }, [])
 
   const handleStorageChange = storage => {
-    setStorageValue(storage)
+    setStorageValue(parseInt(storage))
   }
 
   const handleColorChange = color => {
-    setColorValue(color)
+    setColorValue(parseInt(color))
   }
 
   const onAddToCart = async () => {
     if (storageValue && colorValue) {
-      window.alert('Added to cart!')
+      const itemCount = await cartServices.addProductToCart(productDetail.id, storageValue, colorValue)
+      cart.setItemCount(itemCount)
     }
   }
 
@@ -71,6 +76,7 @@ export const ProductDetail = ({ productId }) => {
           <ProductDetailSelectBlock>
             <b>Elige tamaño de almacenamiento: </b>
             <OptionsSelect
+              dataTestid="storage-select"
               placeholder="Selecciona un tamaño de memoria"
               options={productDetail.storages}
               onChange={handleStorageChange}
@@ -79,6 +85,7 @@ export const ProductDetail = ({ productId }) => {
           <ProductDetailSelectBlock>
             <b>Elige el color del dispositivo: </b>
             <OptionsSelect
+              dataTestid="color-select"
               placeholder="Selecciona un color"
               options={productDetail.colors}
               onChange={handleColorChange}
