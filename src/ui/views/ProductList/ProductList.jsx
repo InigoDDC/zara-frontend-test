@@ -3,9 +3,11 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { Container } from 'ui/components/Container'
 import { sizes } from 'ui/theme'
+import { useLocation } from 'wouter'
 import { ProductListItem } from './_components/ProductListItem'
 
 export const ProductList = () => {
+  const [, setLocation] = useLocation()
   const [productList, setProductList] = React.useState([])
 
   React.useEffect(() => {
@@ -17,11 +19,15 @@ export const ProductList = () => {
     loadProductList()
   })
 
+  const handleItemClick = productId => {
+    setLocation(`/productos/${productId}`)
+  }
+
   return (
     <Container>
       <StyledProductList>
         {productList.map(product => (
-          <ProductListItem key={product.id} product={product} onClick={() => ''} />
+          <ProductListItem key={product.id} product={product} onClick={handleItemClick} />
         ))}
       </StyledProductList>
     </Container>

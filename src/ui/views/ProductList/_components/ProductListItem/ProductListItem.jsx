@@ -3,8 +3,12 @@ import PropTypes from 'prop-types'
 import { ProductListItemImage, StyledProductListItem } from './ProductListItem.styles'
 
 export const ProductListItem = ({ product, onClick }) => {
+  const handleClick = () => {
+    onClick(product.id)
+  }
+
   return (
-    <StyledProductListItem onClick={onClick}>
+    <StyledProductListItem onClick={handleClick}>
       <ProductListItemImage alt={`Image of phone ${product.brand} ${product.model}`} src={product.image} />
       <div>
         <p>
