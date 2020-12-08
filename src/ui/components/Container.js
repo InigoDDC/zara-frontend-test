@@ -5,7 +5,7 @@ export const Container = styled.div`
   width: 100%;
   padding: ${sizes.medium};
 
-  ${p => p.small && 'max-width: 760px;'}
+  ${p => p.small && 'max-width: 792px;'}
 
   @media (min-width: ${breakpoints.tablet}px) {
     width: 420px;
