@@ -1,8 +1,8 @@
 export const breakpoints = {
   /** 425px */
   tablet: 425,
-  /** 768px */
-  tabletL: 768,
+  /** 800px */
+  tabletL: 800,
   /** 990px */
   desktop: 990,
   /** 1200px */

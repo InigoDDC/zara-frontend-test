@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { useLocation } from 'wouter'
 import logo from 'ui/images/logo.png'
-import { sizes } from 'ui/theme'
+import { breakpoints, sizes } from 'ui/theme'
 import { Container } from '../Container'
 import { BreadCrumbs } from './_components/Breadcrumbs'
 import { CartIcon } from './_components/CartIcon'
@@ -20,9 +20,14 @@ export const Header = () => {
 }
 
 const Logo = styled.img`
-  height: 100%;
+  height: 70%;
+  max-width: 100%;
 
   cursor: pointer;
+
+  @media (min-width: ${breakpoints.tabletL}px) {
+    height: 100%;
+  }
 `
 
 const StyledHeader = styled(Container)`

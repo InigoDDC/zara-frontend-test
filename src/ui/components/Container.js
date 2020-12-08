@@ -3,7 +3,7 @@ import { breakpoints, sizes } from 'ui/theme'
 
 export const Container = styled.div`
   width: 100%;
-  padding: ${sizes.large};
+  padding: ${sizes.medium};
 
   ${p => p.small && 'max-width: 760px;'}
 
@@ -14,19 +14,12 @@ export const Container = styled.div`
   }
 
   @media (min-width: ${breakpoints.tabletL}px) {
-    width: 760px;
-  }
-
-  @media (min-width: ${breakpoints.desktop}px) {
-    width: 950px;
+    width: 792px;
   }
 
   @media (min-width: ${breakpoints.desktopL}px) {
-    width: 1160px;
-  }
-
-  @media (min-width: ${breakpoints.desktopXL}px) {
-    width: 1400px;
+    width: 1192px;
+    padding: ${sizes.large};
   }
 
   @media (min-width: ${breakpoints.desktopH}px) {
