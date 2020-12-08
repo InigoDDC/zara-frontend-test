@@ -1,5 +1,3 @@
-import { aProductDetail } from 'core/domain/product/__test__/product.testDataFactory'
+import { productRepository } from 'core/domain/product/product.repository'
 
-export const getProductDetail = productId => {
-  return new Promise(resolve => resolve(aProductDetail({ id: productId })))
-}
+export const getProductDetail = async productId => await productRepository.loadProductDetail(productId)
