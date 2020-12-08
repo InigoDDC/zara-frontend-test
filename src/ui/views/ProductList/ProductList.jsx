@@ -17,7 +17,7 @@ export const ProductList = () => {
     }
 
     loadProductList()
-  })
+  }, [])
 
   const handleItemClick = productId => {
     setLocation(`/productos/${productId}`)

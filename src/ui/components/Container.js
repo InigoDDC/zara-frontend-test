@@ -3,8 +3,9 @@ import { breakpoints, sizes } from 'ui/theme'
 
 export const Container = styled.div`
   width: 100%;
-  padding-left: ${sizes.base};
-  padding-right: ${sizes.base};
+  padding: ${sizes.large};
+
+  ${p => p.small && 'max-width: 760px;'}
 
   @media (min-width: ${breakpoints.tablet}px) {
     width: 420px;
