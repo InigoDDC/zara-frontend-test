@@ -50,4 +50,6 @@ export const Button = styled.div`
   color: ${colors.lighterBlue};
   background-color: ${p => (p.disabled ? colors.grey : colors.blue)};
   border-radius: ${sizes.small};
+
+  cursor: ${p => !p.disabled && 'pointer'};
 `

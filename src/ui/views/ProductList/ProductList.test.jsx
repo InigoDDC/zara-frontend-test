@@ -35,7 +35,7 @@ describe('Product list view', () => {
     fireEvent.click(productElement)
 
     await waitFor(() => {
-      expect(fakeSetLocation).toBeCalledWith(`/productos/${product.id}`)
+      expect(fakeSetLocation).toBeCalledWith(`/${product.id}`)
     })
   })
 })

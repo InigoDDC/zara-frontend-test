@@ -1,3 +1,8 @@
+# Things to know
+
+- This project works with node version 14.3.0
+- It uses the Prettier package for the linter
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

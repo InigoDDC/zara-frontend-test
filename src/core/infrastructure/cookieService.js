@@ -1,6 +1,8 @@
 export const cookieService = {
   save: (name, value) => {
-    document.cookie = `${name}='${JSON.stringify(value)}'; expires=${new Date(new Date().getTime() + 60 * 60 * 1000)};`
+    document.cookie = `${name}='${JSON.stringify(value)}'; expires=${new Date(
+      new Date().getTime() + 60 * 60 * 1000
+    ).toUTCString()};`
   },
 
   get: name => {

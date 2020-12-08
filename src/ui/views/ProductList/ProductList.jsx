@@ -20,7 +20,7 @@ export const ProductList = () => {
   }, [])
 
   const handleItemClick = productId => {
-    setLocation(`/productos/${productId}`)
+    setLocation(`/${productId}`)
   }
 
   return (
