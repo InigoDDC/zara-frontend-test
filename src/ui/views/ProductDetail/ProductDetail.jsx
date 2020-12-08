@@ -12,6 +12,7 @@ import { OptionsSelect } from './_components/OptionsSelect'
 import { ListItem } from './_components/ListItem'
 import { CartContext } from 'ui/components/CartContextProvider'
 import { cartServices } from 'core/services/cart'
+import { Loader } from 'ui/components/Loader'
 
 export const ProductDetail = ({ productId }) => {
   const [productDetail, setProductDetail] = React.useState()
@@ -51,7 +52,7 @@ export const ProductDetail = ({ productId }) => {
   }
 
   if (!productDetail) {
-    return <p>Loading</p>
+    return <Loader />
   }
 
   return (
